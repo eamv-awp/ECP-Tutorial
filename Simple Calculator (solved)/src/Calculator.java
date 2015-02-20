@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Source: http://codereview.stackexchange.com/questions/40615/simple-java-calculator
  */
-public class Decimal {
+public class Calculator {
     /**
      * @param args
      */

@@ -16,14 +16,16 @@ public class InputReader {
 	public InputReader() {
 		scanner = new Scanner(System.in);
 		
-        System.out.println("Enter first number");
-        n1 = scanner.nextDouble();
-
-        System.out.println("Enter second number");
-        n2 = scanner.nextDouble();
-
+		n1 = readDouble("Enter first number");
+		n2 = readDouble("Enter second number");
+		
         System.out.println("Enter your operation");
         operation = scanner.next();
+	}
+	
+	private double readDouble(String prompt) {
+        System.out.println(prompt);
+        return scanner.nextDouble();
 	}
 	
 	public double getN1() {

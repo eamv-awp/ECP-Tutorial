@@ -1,4 +1,6 @@
 import static org.junit.Assert.*;
+import logic.CalculatorController;
+import logic.InputReader;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -85,8 +87,37 @@ public class SystematicTests {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void test8PlusNegative100Equals92() {
+		assertEquals(-92, new CalculatorControllerStub().getResult(), 0);
+	}
+	
+	private class CalculatorControllerStub extends CalculatorController {
+		
+		public double getResult() {
+			return this.result;
+		}
+		
+		@Override
+		protected InputReader newInputReader() {
+			return new InputReader() {
+
+				@Override
+				public double getN1() {
+					return 8;
+				}
+
+				@Override
+				public double getN2() {
+					return -100;
+				}
+
+				@Override
+				public String getOperation() {
+					return "+";
+				}
+				
+			};
+		}
 	}
 
 }

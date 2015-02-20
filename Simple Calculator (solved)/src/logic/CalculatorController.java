@@ -6,7 +6,7 @@ public class CalculatorController {
         double n1, n2;
         String operation;
         
-        InputReader inputReader = new InputReader();
+        InputReader inputReader = new InputReaderImpl();
         
         n1 = inputReader.getN1();
         n2 = inputReader.getN2();

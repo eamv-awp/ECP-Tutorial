@@ -25,7 +25,15 @@ public class InputReader {
 	
 	private double readDouble(String prompt) {
         System.out.println(prompt);
-        return scanner.nextDouble();
+        double n;
+        if (scanner.hasNextDouble())
+        	n = scanner.nextDouble();
+        else {
+        	scanner.nextLine(); // discards current input
+        	System.out.println("Invalid number");
+        	n = readDouble(prompt);
+        }
+        return n;
 	}
 	
 	public double getN1() {
